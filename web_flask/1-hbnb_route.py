@@ -1,15 +1,22 @@
 #!/usr/bin/python3
-"""This script starts a Flask application"""
+"""This script start a flask application with two routes"""
 
 
 from flask import Flask
+
 app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
 def hello_hbnb():
-    """This method defines a decorator as the route for the root URL"""
+    """The first route"""
     return "Hello HBNB!"
+
+
+@app.route('/hbnb', strict_slashes=False)
+def hbnb():
+    """The route for hbnb"""
+    return "HBNB"
 
 
 if __name__ == '__main__':
